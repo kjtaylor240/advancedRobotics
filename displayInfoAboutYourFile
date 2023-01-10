@@ -1,0 +1,10 @@
+//Display the file and date of your file
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println(F("RUNNING PROGRAM " __FILE__ " from " __DATE__));
+}
+
+void loop() {
+
+}
