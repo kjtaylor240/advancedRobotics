@@ -1,0 +1,18 @@
+#include <IRremote.h>
+#define IRPIN  12
+
+IRrecv irrecv(IRPIN);
+decode_results results;
+
+void setup() {
+  Serial.begin(9600);
+  irrecv.enableIRIn();
+}
+
+void loop() {
+  if (irrecv.decode(&results)) {
+    Serial.println(results.value);  //Decimal formatting
+    //Serial.println(results.value, HEX); //Hex formatting
+    irrecv.resume();
+  }
+}
